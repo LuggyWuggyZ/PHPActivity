@@ -23,6 +23,10 @@ function integerParameter($name, $default, $min, $max) {
 }
 
 $width = integerParameter('width', null, 1, 1000);
+// An empty height keeps the assignment's square default.
+$height = (isset($_GET['height']) && $_GET['height'] !== '')
+    ? integerParameter('height', null, 1, 1000)
+    : null;
 $size1 = integerParameter('size1', 24, 12, 64);
 $size2 = integerParameter('size2', 48, 12, 48);
 $text1 = $_GET['text1'] ?? '';
@@ -51,12 +55,15 @@ if ($text2 !== '') {
     imagettftext($img, $size2, 0, 10, imagesy($img) - 20, $color, $font, $text2);
 }
 
-// A supplied width produces a square, as required by the assignment.
-if ($width !== null) {
-    $scaled = imagescale($img, $width, $width);
+// Width and optional height come from GET; width alone produces a square.
+if ($width !== null || $height !== null) {
+    $outputWidth = $width ?? imagesx($img);
+    $outputHeight = $height ?? $outputWidth;
+    $scaled = imagescale($img, $outputWidth, $outputHeight);
     imagedestroy($img);
     $img = $scaled;
 }
 header('Content-Type: image/jpeg');
 imagejpeg($img);
 imagedestroy($img);
+

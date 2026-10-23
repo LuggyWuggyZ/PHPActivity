@@ -49,8 +49,12 @@
         <label>Image Width:</label>
         500 <input type="range" name="width" min=500 max=1000  value=500 /> 1000            
 
+        <label for="height">Image Height (optional; blank matches width):</label>
+        <input type="number" id="height" name="height" min="1" max="1000" placeholder="Same as width">
+
         <input type="submit" value="Click To See Meme" >
     </form>
    
 </body>
 </html>
+

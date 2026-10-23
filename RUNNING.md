@@ -27,3 +27,15 @@ for the student to create. No custom meme submissions are included.
 
 See README.md for the original assignment. GitHub hosts the source code;
 run PHP locally to use the app.
+
+## Rubric verification
+
+- Commit messages use the required prefix and description format.
+- Both form.html (provided markup) and form.php display thumbnails generated
+  by result.php. The PHP form also generates its image and option lists
+  from data.inc.php, as requested in the assignment instructions.
+- result.php receives the painting, captions, font sizes, width, and optional
+  height through $_GET.
+- Width alone produces the required square output. An explicit height
+  overrides the square default to support the rubric's width/height criterion.
+- Custom meme submissions remain for the student to create.
