@@ -38,13 +38,13 @@
             ?>
         </select>
 
-        <label>Meme 1 Text:</label>
+        <label>Top Caption:</label>
         <input type="text" name="text1" size=50 value="" placeholder="Enter your first caption" maxlength="500" />
-        <label>Meme 1 Font Size:</label>
+        <label>Top Caption Font Size:</label>
         12 <input type="range" name="size1" min=12 max=64  value=24 /> 64
-        <label>Meme 2 Text:</label>
+        <label>Bottom Caption Text:</label>
         <input type="text" name="text2" size=50 value="" placeholder="Enter your second caption" maxlength="500"/>   
-        <label>Meme 2 Font Size:</label>
+        <label>Bottom Caption Font Size:</label>
         12 <input type="range" name="size2" min=12 max=48 value=48 /> 48  
         <label>Image Width:</label>
         500 <input type="range" name="width" min=500 max=1000  value=500 /> 1000            
